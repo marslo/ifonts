@@ -1,4 +1,4 @@
-#+title: global fonts ( marslo )
+#+title: iFonts (marslo)
 #+description: global-wild font customization
 #+author:[[mailto:marslo.jiao@gmail.com][Marslo Jiao]]
 #+BEGIN_COMMENT
@@ -7,9 +7,9 @@
 
 ** installation
 + install stylus extension for [[https://chrome.google.com/webstore/detail/stylus/clngdbkpkpeebahjckkjfobafhncgmne][Stylus for Chrome]] | [[https://chrome.google.com/webstore/detail/stylish-custom-themes-for/fjnbnpbmkenffdnngjfgmeleoegfcffe][Stylish for Chrome]] | [[https://addons.mozilla.org/pt-BR/firefox/addon/styl-us/][Firefox]] | [[https://chromewebstore.google.com/detail/stylus/clngdbkpkpeebahjckkjfobafhncgmne][edge]]
-+ click to install 📦 [[https://github.com/marslo/global-fonts/raw/main/global-fonts.user.css][marslo/global-fonts]] | [[https://userstyles.world/api/style/5264.user.css][global fonts (marslo)]]
++ click to install 📦 [[https://github.com/marslo/ifonts/raw/main/ifonts.user.css][marslo/ifonts]] | [[https://userstyles.world/api/style/5264.user.css][iFonts (marslo)]]
 
-** [[https://userstyles.world/style/5264/global-fonts-marslo][global fonts ( marslo )]]
+** iFonts (marslo)
 + ~v2.2.2~ Operator Mono Lig Nerd Font Mono
   + ~v2.2.2~ devicons
     [[./screenshots/devicons.v2.2.2.png]]
@@ -25,11 +25,11 @@
 ** fonts download
 
 #+BEGIN_QUOTE
-+ more detals : [[https://marslo.github.io/ibook/tools/fonts.html][iMarlso: fonts]]
++ more details : [[https://marslo.github.io/ibook/tools/fonts.html][iMarslo: fonts]]
 #+END_QUOTE
 
 *** sans
-+ [[https://https://github.com/marslo/fonts/tree/fonts/Recursive/Recursive_Desktop_NF/ttf][Recursive Sans Casual Static Nerd Font]] | [[https://github.com/arrowtype/recursive/releases][Recursive Sans Casual Static]] | [[https://www.recursive.design/][Recursive]]
++ [[https://github.com/marslo/fonts/tree/fonts/Recursive/Recursive_Desktop_NF/ttf][Recursive Sans Casual Static Nerd Font]] | [[https://github.com/arrowtype/recursive/releases][Recursive Sans Casual Static]] | [[https://www.recursive.design/][Recursive]]
 + [[https://design.ubuntu.com/font][ubuntu]] | [[https://fonts.google.com/specimen/Ubuntu][preview]]
 + [[https://github.com/marslo/fonts/tree/fonts/Candara][Candara Nerd Font]] | [[https://www.dafontfree.io/candara-font][Candara]]
 + [[https://github.com/marslo/fonts/tree/fonts/Gisha][Gisha Nerd Font]] | [[https://learn.microsoft.com/en-us/typography/font-list/gisha][Gisha]]
@@ -55,7 +55,7 @@
 + ~background: #3a122e~ : for ubuntu style background
   [[./screenshots/gerrit-comments-ubuntu.png]]
 
-+ [[https://github.com/marslo/global-fonts/blob/main/global-fonts.user.css#L532-L550][css]]
++ [[https://github.com/marslo/ifonts/blob/main/ifonts.user.css#L532-L550][css]]
   #+BEGIN_SRC css
   html {
     --font-family-sans: "Recursive Sans Linear Static", "Ubuntu", "Recursive", "Candara", "Gisha", "Titillium";
