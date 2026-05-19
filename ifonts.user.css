@@ -1763,3 +1763,56 @@
     font-family: Ellipsis,iA Writer Quattro,SF Mono,Menlo,Liberation Mono,DejaVu Sans Mono,Consolas,monospace !important;
   }
 } /* @-moz-document: fossa */
+
+@-moz-document domain("gemini.google.com") {
+
+  /**
+   * gemini
+  **/
+
+  /* control the width of the outer container at the bottom and force it to be horizontally centered */
+  .bottom-container,
+  .input-area-container {
+      max-width: 85vw !important;
+      width: 100% !important;
+      margin-left: auto !important;
+      margin-right: auto !important;
+  }
+
+  /* fix the input box overflow issue (wrap the icon) */
+  .text-input-field {
+      max-width: 100% !important;
+      width: 100% !important;
+      box-sizing: border-box !important;
+  }
+  .trailing-actions-wrapper {
+      flex-shrink: 0 !important;
+  }
+
+  /* chat history is forced to be horizontally centered */
+  .conversation-container,
+  infinite-scroller,
+  chat-history {
+      max-width: 85vw !important;
+      width: 100% !important;
+      margin-left: auto !important;
+      margin-right: auto !important;
+  }
+
+  /* extend qa container and ai reply, fill the expanded parent container */
+  user-query,
+  user-query-content,
+  .user-query-container,
+  model-response,
+  message-viewer,
+  .message-content {
+      max-width: 100% !important;
+      width: 100% !important;
+  }
+
+  /* prevent orizontal scrollbars */
+  .code-block,
+  pre {
+      max-width: 100% !important;
+  }
+} /* @-moz-document: gemini */

@@ -29,7 +29,13 @@
         "gr-date-formatter",
         "gr-diff",
         "gr-endpoint-decorator",
-        "time-ago"
+        "time-ago",
+        "infinite-scroller",
+        "chat-history",
+        "user-query",
+        "user-query-content",
+        "model-response",
+        "message-viewer"
       ]
     }],
     "no-descending-specificity": null,
