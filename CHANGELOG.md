@@ -1,3 +1,13 @@
+## [4.0.2](https://github.com/marslo/ifonts/compare/v4.0.1...v4.0.2) (2026-05-19)
+
+### Others
+
+* **gemini:** widen gemini to 85vw ([9f91c12](https://github.com/marslo/ifonts/commit/9f91c12f7c09a6f2693dfdab1a20242e308a1372))
+
+### Documentation
+
+* fix the typo ([1b5fd2d](https://github.com/marslo/ifonts/commit/1b5fd2d12ba035aefd14471d904563cf10ab9a4e))
+
 ## [4.0.1](https://github.com/marslo/global-fonts/compare/v4.0.0...v4.0.1) (2026-05-13)
 
 ### Others
