@@ -1,3 +1,14 @@
+## [4.0.3](https://github.com/marslo/ifonts/compare/v4.0.2...v4.0.3) (2026-05-20)
+
+### style
+
+* style: enlarge chart bubble
+
+### ci
+
+* ci: fix the 'Node.js 20 actions are deprecated' issue in pre-commit workflow
+* ci: using .releaserc.js instead of json for commit body generation
+
 ## [4.0.2](https://github.com/marslo/ifonts/compare/v4.0.1...v4.0.2) (2026-05-19)
 
 ### Others
