@@ -1815,4 +1815,10 @@
   pre {
       max-width: 100% !important;
   }
+
+  /* question bubble */
+  .user-query-bubble-with-background {
+    max-width: 60% !important;
+  }
+
 } /* @-moz-document: gemini */
