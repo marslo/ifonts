@@ -1,3 +1,9 @@
+## [4.0.4](https://github.com/marslo/ifonts/compare/v4.0.3...v4.0.4) (2026-06-18)
+
+### fix
+
+* fix: fix jenkins 'inline badge' center vertically; fix h2 in github pages; fix gemini table width
+
 ## [4.0.3](https://github.com/marslo/ifonts/compare/v4.0.2...v4.0.3) (2026-05-20)
 
 ### style
