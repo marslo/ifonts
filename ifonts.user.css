@@ -318,6 +318,19 @@
     white-space: pre-wrap !important;
   }
 
+  /* ── inline badge (e.g. uppercase "MANDATORY FIELD") in parameter/form description ── */
+  .jenkins-form-description span[style*="background"],
+  .jenkins-form-description span[style*="text-transform"] {
+    display: inline-block !important;
+    line-height: 1 !important;
+    text-box-trim: trim-both !important;
+    text-box-edge: cap alphabetic !important;
+    text-box: trim-both cap alphabetic !important;             /* shorthand fallback */
+    /* font-family: "Gisha Nerd Font" !important; */
+    /* trimming removes the line-box leading, so add the vertical breathing room back */
+    padding-block: .4em !important;
+  }
+
 } /* @-moz-document: jenkins */
 
 @-moz-document regexp("(?:https?://((?!([^/]*jenkins(?!gitpod)[^/]*\\.com/?.*|34\\.233.*|3\\.230.*|10\\.69.*|imarslo\\.jenkins\\.com|ci\\.jenkins\\.io).*|.*Monitor/$|.*sabacloud\\.com|.*detail.*pipeline|shields\\.io|127\\.0\\.0\\.1|0\\.0\\.0\\.0|localhost|.*fonts?.+\\.(com|org|net)|.*fonts?.(cn|netlify)|.*/fonts/.*|.*zijia.com.cn|.*sharepoint\\.com|programmingfonts|.*re-dashboard|jqplay\\.org|.*\\.github\\.dev|.*\\.w3schools\\.com|artifactory.*\\.com/.*/groovydoc/.*|.*Iosevka.*).).*)|file://.*/git-doc/.+\\.html") {
@@ -447,7 +460,8 @@
     [class*="aui-dropdown2"] *,
     [class*="text-normal"] *,
     [class*="btn"],
-    [class*="logo"]
+    [class*="logo"],
+    [class*="badge"]
   ),
   h1#gh-pages code,
   div[class*="headline"]:not(
@@ -499,13 +513,16 @@
       [class*="style-name"],
       [class*="spanh2"],
       [class*="Overlay-"],
-      [data-v-0b7a2eac]
+      [data-v-0b7a2eac],
+      [class*="f4"]                                           /* github fork list */
    ) >
     :is(
       a:not([class*="btn"], [class*="css-"]),
       span:not([class*="PpN7xc"], [class*="-name"], [class*="btn"], [class*="separator"], [class*="js-path"]),
       *:not(code)
-   ):not(a[data-hydro-click],[role*="button"]),               /* data-hydro-click: https://github.com/trending */
+   ):not(
+     a[data-hydro-click],[role*="button"]                    /* data-hydro-click: https://github.com/trending */
+   ):not(button ~ span),                                     /* button ~ span: github - Expand file tree      */
   h2#gitbook-cli > code, h2#gh-pages code,
   .markdown-body h2:not([class*="btn"]):not([dir*="auto"]),
   .markdown-section h2:not([class*="btn"]):not([dir*="auto"]),
@@ -567,31 +584,23 @@
     font-family: var(--font-family-mono) !important;
   }
 
-  /* kbd, */
-  pre:not(.pm4ll46 > pre):not(#char-bar pre):not(
-    [class*="dashboard-break-word"],
-    [class*="masked-font"],
-    [class*="_13"]
-  ),
-  pre:not(.pm4ll46 > pre):not(#char-bar pre):not(
-    [class*="dashboard-break-word"],
-    [class*="masked-font"],
-    [class*="_13"]
-  ) *:not(ul):not(ol):not(kbd):not(
-    p[class*="paragraph"],
-    [class*="heading"],
-    [class*="_1t"] *
-  ),
+  pre:not(.pm4ll46 > pre, #char-bar pre, [class*="dashboard-break-word"], [class*="masked-font"], [class*="_13"], :has(.sha-block)) {
+    /* apply mono font to `pre` that meets the criteria */
+    font-family: var(--font-family-mono) !important;
+    /* remove the mono font from a specific element inside the `pre` tag */
+    & *:not(ul, ol, kbd, p[class*="paragraph"], [class*="heading"], [class*="_1t"] *) {
+      font-family: var(--font-family-mono) !important;
+    }
+  }
+
   .markdown-body :is(pre, pre *),
   pre.code *,
-  :is(code:not(
-    [class*="confluence"] code, [class*="innerCell"] code,
-    [class*="TimelineItem-body"] code, [class*="macro-param-desc"] code
-  )),
-  :is(code:not(
-    [class*="confluence"] code, [class*="innerCell"] code,
-    [class*="TimelineItem-body"] code, [class*="macro-param-desc"] code
-  )) *,
+  :is(code, code *):not(:is(
+    [class*="confluence"],
+    [class*="innerCell"],
+    [class*="TimelineItem-body"],
+    [class*="macro-param-desc"]
+  ) *),
   .code-line,
   .command,                                                   /* commandlineful.com */
   input :where(code, pre),
@@ -655,7 +664,7 @@
   div.options-column > div.option,
   input[type*="search"],
   span[id*="share"],
-  div[class*="share"] *:not(mat-icon) {
+  div[class*="share"] *:not(mat-icon):not([class*="button"]) {
     font-family: var(--font-family-sans) !important;
   }
 
@@ -1129,7 +1138,7 @@
   }
   p[node="[object Object]"] + ol > li,
   p[node="[object Object]"] + ul > li {
-    font-family: 'LXGW WenKai Mono TC' !important;
+    font-family: 'LXGWWenKaiMono Nerd Font Mono' !important;
   }
 
 
@@ -1137,6 +1146,7 @@
   ::before, ::after, button, button.btn, span.fa-angle-up * {
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
+    box-sizing: border-box;
     font-family: inherit;
   }
 
@@ -1183,8 +1193,8 @@
   .htmledit_views code ol {
     padding-bottom: 5px !important;
   }
-  /* https://bingehacking.blogspot.com */
-  span[style*="font-family"], .PopularPosts, .post-title a {
+  /* https://bingehacking.blogspot.com x span[style*="font-family"] */
+  .PopularPosts, .post-title a {
     font-family: var(--font-family-sans) !important;
   }
   /* https://click.palletsprojects.com/en/8.1.x/api/ */
@@ -1297,7 +1307,9 @@
     [class*="aui-"],
     [value],
     [href="#"],
-    [class*="button--"]
+    [class*="button--"],
+    [class*="feedback"],
+    #banner-dismiss
   ):not(
     :is([class*="gravatar-form__content"] .button),
     :is([class*="table__align"] .button)
@@ -1448,7 +1460,7 @@
     [class*="js-"],
     [class*="timeline"]
   ) {
-    font-family: 'FantasqueSansM Nerd Font', 'RecMonoCasual Nerd Font Mono', 'VictorMono Nerd Font Mono', 'LXGW WenKai Mono TC', ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, 'Liberation Mono', monospace !important;
+    font-family: 'FantasqueSansM Nerd Font', 'RecMonoCasual Nerd Font Mono', 'VictorMono Nerd Font Mono', 'LXGWWenKaiMono Nerd Font Mono', ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, 'Liberation Mono', monospace !important;
     font-size: var(--font-size-github-mono) !important;
   }
 
@@ -1461,8 +1473,8 @@
   .HVNDY { font-family: var(--font-family-sans) !important; }
   div[class*="Box-sc-"], div.ewmGxV { font-family: var(--font-family-mono) !important; }
 
-
-  [class*="prc-Button-ButtonBase"]:where([data-size=small]) [class*="prc-Button-Label"],  /* github revision number */
+  /* github revision number */
+  a[href*="/commit/"][class*="prc-Button-ButtonBase"] [class*="prc-Button-Label"],
   .Link--secondary span {
     font-family: var(--font-family-mono) !important;
   }
@@ -1476,7 +1488,7 @@
     [class*="color-fg-"],
     [class*="Link--"]
   ) {
-    font-family: 'Victor Mono', 'LXGW WenKai Mono TC',  ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, 'Liberation Mono', monospace !important;
+    font-family: 'VictorMono Nerd Font Mono', 'LXGWWenKaiMono Nerd Font Mono',  ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, 'Liberation Mono', monospace !important;
     font-weight: bold;
   }
   .d-flex.flex-wrap.flex-justify-end [rel*="author"],
@@ -1819,6 +1831,20 @@
   /* question bubble */
   .user-query-bubble-with-background {
     max-width: 60% !important;
+  }
+
+  /* override the hardcoded 692px max-width on the inner table container */
+  div.table-block,
+  .table-block.new-table-style {
+      max-width: 100% !important;
+      width: 100% !important;
+  }
+
+  /* ensure the actual table element expands to fill the new container width */
+  .table-content,
+  .table-content table {
+      width: 100% !important;
+      max-width: 100% !important;
   }
 
 } /* @-moz-document: gemini */
