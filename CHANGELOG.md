@@ -1,3 +1,9 @@
+## [4.1.0](https://github.com/marslo/ifonts/compare/v4.0.4...v4.1.0) (2026-07-01)
+
+### Features
+
+* feat(claude.ai): bump 85vw for claude.ai; and reduce the font size in global settings; bump conventional-changelog-conventionalcommits v10+ for semantic-release
+
 ## [4.0.4](https://github.com/marslo/ifonts/compare/v4.0.3...v4.0.4) (2026-06-18)
 
 ### fix
