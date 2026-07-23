@@ -6,20 +6,21 @@
 //   conventional-changelog-writer. conventional-changelog-conventionalcommits
 //   >= 9 dropped its Handlebars writerOpts in favour of @conventional-changelog/
 //   template, which release-notes-generator does NOT use — so with preset >= 9
-//   the section grouping silently disappears (flat list, no "### Features") and
-//   the header stops being a markdown link. To stay compatible with ANY preset
-//   version (8, 9, 10, …) we supply the full Handlebars writerOpts (mainTemplate
-//   / headerPartial / commitPartial) and the grouping ourselves; the preset is
-//   then only used for its commit PARSER.
+//   the section grouping silently disappears (flat list, no "### Features").
+//   To stay compatible with ANY preset version (8, 9, 10, …) we supply the full
+//   Handlebars writerOpts (mainTemplate / headerPartial / commitPartial) and the
+//   grouping ourselves; the preset is then only used for its commit PARSER.
 // =============================================================================
 
 const SECTIONS = [
   { type: 'feat',     section: 'Features' },
   { type: 'fix',      section: 'Bug Fixes' },
   { type: 'refactor', section: 'Code Refactoring' },
+  { type: 'style',    section: 'Styles' },
   { type: 'chore',    section: 'Others' },
   { type: 'docs',     section: 'Documentation' },
   { type: 'perf',     section: 'Performance' },
+  { type: 'test',     section: 'Tests' },
   { type: 'ci',       section: 'CI/CD' }
 ];
 const TYPE_TO_SECTION = Object.fromEntries(SECTIONS.map(s => [s.type, s.section]));
@@ -68,10 +69,14 @@ module.exports = {
   "tagFormat": "v${version}",
   "plugins": [
     ["@semantic-release/commit-analyzer", {
-      "preset": "angular",
+      "preset": "conventionalcommits",
       "releaseRules": [
+        // { "breaking": true,   "release": "minor" },
+        { "breaking": true,   "release": "major" },
+        // { "type": "feat",     "release": "patch" },
         { "type": "chore",    "release": "patch" },
         { "type": "refactor", "release": "patch" },
+        { "type": "style",    "release": "patch" },
         { "type": "docs",     "release": "patch" },
         { "type": "ci",       "release": "patch" }
       ]
