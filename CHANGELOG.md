@@ -1,3 +1,13 @@
+## [4.1.1](https://github.com/marslo/ifonts/compare/v4.1.0...v4.1.1) (2026-07-28)
+
+### Bug Fixes
+
+* fix(ace): stop cursor drift by excluding the ace editor subtree from the global sans rule so its hidden font-measure node matches the mono text
+
+### CI/CD
+
+* ci(releaserc.js): sync up with `$HOME/.releaserc.js`
+
 ## [4.1.0](https://github.com/marslo/ifonts/compare/v4.0.4...v4.1.0) (2026-07-01)
 
 ### Features
