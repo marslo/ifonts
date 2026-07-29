@@ -1,3 +1,9 @@
+## [4.1.2](https://github.com/marslo/ifonts/compare/v4.1.1...v4.1.2) (2026-07-29)
+
+### Bug Fixes
+
+* fix(github): align query builder font sizes to fix cursor misalignment in github search/input box
+
 ## [4.1.1](https://github.com/marslo/ifonts/compare/v4.1.0...v4.1.1) (2026-07-28)
 
 ### Bug Fixes
