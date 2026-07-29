@@ -1439,6 +1439,8 @@
   [class*='react-line'],
   [class*='react-code']:not([class*="-view"]),
   div[class*="styled-input-content"],                         /* github issue search */
+  div.QueryBuilder-StyledInputContainer,                      /* github search/query input box */
+  .QueryBuilder-StyledInputContainer *,                       /* github search/query input box */
   .react-code-lines *,
   div.form-group textarea,
   [name^="ssh_key"],
@@ -1549,9 +1551,7 @@
   div.eIjUrw, div.qQkTK,                                      /* github search repositories */
   .line-number, .gr-diff,                                     /* github codeblock */
   .line:not([id*="table"]),                                   /* github codeblock && https://codeberg.org/vhs/jekyll-money */
-  div.QueryBuilder-StyledInputContainer,                      /* github search/query input box */
-  input:is([id="repos-list-filter-input"]),
-  .QueryBuilder-StyledInputContainer *  {                     /* github search/query input box */
+  input:is([id="repos-list-filter-input"]) {
     font-family: var(--font-family-mono) !important;
     font-size: var(--font-size-big-mono) !important;
     line-height: 1.5em !important;
