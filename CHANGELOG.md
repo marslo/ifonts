@@ -1,3 +1,9 @@
+## [4.1.3](https://github.com/marslo/ifonts/compare/v4.1.2...v4.1.3) (2026-07-31)
+
+### Others
+
+* chore(85vw): extend the page-inner/container(stackoverflow) to 85vw
+
 ## [4.1.2](https://github.com/marslo/ifonts/compare/v4.1.1...v4.1.2) (2026-07-29)
 
 ### Bug Fixes
