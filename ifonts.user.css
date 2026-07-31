@@ -871,6 +871,10 @@
 
 
   /* ── stackoverflow ──────────────────────────────────────── */
+  body.question-page .container,
+  body.question-page #content {
+    max-width: 85vw !important;
+  }
   .fs-headline1 *,
   .question-header * {
     font-size: 26px !important;
@@ -1276,6 +1280,11 @@
     font-size: 16px !important;
   }
 
+  /* https://python.swaroopch.com/basics.html */
+  .book .book-body div.page-wrapper div.page-inner {
+    max-width: 80vw !important;
+  }
+
 
   /* ── icon settings ──────────────────────────────────────── */
   i[class*="fa-"],
@@ -1622,7 +1631,7 @@
     color: #b9b9b9 !important;
   }
   span.token.punctuation { color: #93a1a1 !important; }
-  .page-inner { max-width: 90% !important; }
+  .page-inner { max-width: 85vw !important; }
 
   .code-wrapper pre > code > span.code-line:before {          /* line number */
     font-family: var(--font-family-mono) !important;
