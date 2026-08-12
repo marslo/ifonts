@@ -1,3 +1,9 @@
+## [4.1.4](https://github.com/marslo/ifonts/compare/v4.1.3...v4.1.4) (2026-08-12)
+
+### Bug Fixes
+
+* fix(claude.ai): fix the claude.ai 85vw dynamic width; and removed the big-mono for `is(code, code *)`
+
 ## [4.1.3](https://github.com/marslo/ifonts/compare/v4.1.2...v4.1.3) (2026-07-31)
 
 ### Others
