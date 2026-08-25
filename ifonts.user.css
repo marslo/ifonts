@@ -550,7 +550,7 @@
     font-size: var(--font-size-h3) !important;
     font-weight: 400 !important;
   }
-  h3 > code, h3 > a > code, h3#gh-pages code,
+  h3 > code, h3:not([class*="DiffFileHeader-module_"] h3) > a > code, h3#gh-pages code,
   .markdown-section h3 code,
   div[data-v-0b7a2eac] > h2[data-v-0b7a2eac],                 /* artifactory repo name */
   .c-title.t.tts-title a,                                     /* baidu title */
@@ -593,6 +593,7 @@
     }
   }
 
+  /* div[class*="comment"] code,*/
   .markdown-body :is(pre, pre *),
   pre.code *,
   .code-line,
@@ -613,7 +614,6 @@
   .lines-content *,
   tr.line_holder *,
   div[class*="hljs-"] *,
-  div[class*="comment"] code,
   [class="code"],
   [class*="linenumber"] *, [class*="blob"] code,
   [class*="terminal"]:not([class*="main-view"]) *:not([class*="icon"]):not([class*="num-votes"]):not([class*="xterm-"]):not([class*="bar__title"]), #terminal *:not([class*="icon"]),
@@ -849,6 +849,7 @@
   #confluenceTd, .blockInner,                                            /* confluence */
   .jsonpOpener, .timestamp:not(
     [class*="timestamp-top"],
+    [class*="livestamp"],                                                /* confluence */
     [data-cy*="post-timestamp"],
     [data-uri*="cnn.com"]
   ),                                                                     /* Json Viewer; not in discussions.apple.com */
@@ -1423,7 +1424,7 @@
 
   pre > code,
   .markdown-body .highlight * {                               /* github code block */
-    font-size: var(--font-size-big-mono) !important;
+    font-size: var(--font-size-github-mono) !important;
   }
 
   .markdown-title,
@@ -1459,6 +1460,14 @@
   [class*="Filter-module"] input,
   [class*="Input-module"] input[name="repository-input"],
   [class*="Input-module"] span {
+    font-family: var(--font-family-mono) !important;
+    font-size: var(--font-size-github-mono) !important;
+  }
+
+  /* ── new react diff view (PR/commit/compare): all languages ── */
+  code[class*="diff-text"],                                  /* code cell + hunk header cell */
+  code[class*="diff-text"] *,                                /* diff-text-inner, syntax/whitespace spans, +/- marker */
+  td[class*="diff-line-number"] {                            /* line-number gutter */
     font-family: var(--font-family-mono) !important;
     font-size: var(--font-size-github-mono) !important;
   }
@@ -1655,15 +1664,20 @@
   [class*="macro-param-desc"] code, [class*="macro-param-desc"] code * {
     line-height: unset !important;
   }
-  code, code *,
+
   div.codeContent *,
   pre, pre *,
   [class*="highlight"] :where(pre, code),
   body:not(.specificity-inc):not(.specificity-inc):not(.specificity-inc) .wiki-edit-content textarea.wiki-textfield {
     font-family: var(--font-family-mono) !important;
-    font-size: var(--font-size-small-mono) !important;
+    font-size: var(--font-size-normal-mono) !important;
     line-height: 1.5em !important;
   }
+  code, code * {
+    font-family: var(--font-family-mono) !important;
+    font-size: var(--font-size-small-mono) !important;
+  }
+
   .wiki-content h1 {
     font-size: var(--font-size-h1) !important;
   }
