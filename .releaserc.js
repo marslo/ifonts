@@ -2,14 +2,9 @@
 // Self-contained changelog config.
 //
 // WHY THE TEMPLATES ARE INLINED HERE:
-//   @semantic-release/release-notes-generator renders with the Handlebars-based
-//   conventional-changelog-writer. conventional-changelog-conventionalcommits
-//   >= 9 dropped its Handlebars writerOpts in favour of @conventional-changelog/
-//   template, which release-notes-generator does NOT use — so with preset >= 9
-//   the section grouping silently disappears (flat list, no "### Features").
-//   To stay compatible with ANY preset version (8, 9, 10, …) we supply the full
-//   Handlebars writerOpts (mainTemplate / headerPartial / commitPartial) and the
-//   grouping ourselves; the preset is then only used for its commit PARSER.
+//   @semantic-release/release-notes-generator renders with the Handlebars-based conventional-changelog-writer.
+//   conventional-changelog-conventionalcommits >= 9 dropped its Handlebars writerOpts in favour of @conventional-changelog/ template, which release-notes-generator does NOT use — so with preset >= 9 the section grouping silently disappears (flat list, no "### Features").
+//   To stay compatible with ANY preset version (8, 9, 10, …) we supply the full Handlebars writerOpts (mainTemplate / headerPartial / commitPartial) and the grouping ourselves; the preset is then only used for its commit PARSER.
 // =============================================================================
 
 const SECTIONS = [
@@ -28,7 +23,7 @@ const SECTION_ORDER   = SECTIONS.map(s => s.section);
 const isSignoff       = (line) => /^\s*Signed-off-by:/i.test(line);
 const stripSignoff    = (text) => (text || '').split('\n').filter(l => !isSignoff(l)).join('\n').trim();
 
-// ── Handlebars templates (writer-8 compatible; vendored from the conventional - commits preset so they work regardless of the installed preset major) ──
+// ── Handlebars templates (writer-8 compatible; vendored from the conventional-commits preset so they work regardless of the installed preset major) ──
 const mainTemplate = `{{> header}}
 {{#if noteGroups}}
 {{#each noteGroups}}
@@ -61,8 +56,32 @@ const headerPartial = `## {{#if @root.linkCompare~}}
 {{/if}}
 `;
 
-// {{header}} keeps the original "feat: ..." prefix; body/footer follow (signoff stripped in transform)
-const commitPartial = "* {{header}}\n{{#if body}}\n{{body}}\n{{/if}}\n{{#if footer}}\n\n{{footer}}\n{{/if}}\n";
+// standard conventionalcommits line: drop the type keyword (it becomes the "### <section>"
+// header), bold the scope as **scope:**, keep subject, then append the commit-hash link and
+// any issue/PR references; body/footer follow (built + signoff-stripped in transform)
+const commitPartial =
+  '*{{#if scope}} **{{scope}}:**{{/if}} {{#if subject}}{{subject}}{{else}}{{header}}{{/if}}' +
+  '{{#if @root.linkReferences}} ([{{shortHash}}]({{@root.host}}/{{@root.owner}}/{{@root.repository}}/commit/{{hash}})){{/if}}' +
+  '{{#if references}}, closes{{#each references}} {{#if @root.linkReferences}}[{{#if this.owner}}{{this.owner}}/{{/if}}{{this.repository}}#{{this.issue}}]({{@root.host}}/{{#if this.owner}}{{this.owner}}{{else}}{{@root.owner}}{{/if}}/{{this.repository}}/issues/{{this.issue}}){{else}}{{#if this.owner}}{{this.owner}}/{{/if}}{{this.repository}}#{{this.issue}}{{/if}}{{/each}}{{/if}}' +
+  '\n{{#if body}}\n{{body}}\n{{/if}}\n{{#if footer}}\n\n{{footer}}\n{{/if}}\n';
+
+// ── dynamic changelog title ──
+// reuse an existing level-1 header (`# ...`) at the very top of CHANGELOG.md so new
+// releases are inserted BELOW it; if there is none, leave changelogTitle unset so
+// semantic-release just prepends (no title is forced onto title-less changelogs)
+const fs = require('fs');
+const path = require('path');
+const CHANGELOG_FILE = 'CHANGELOG.md';
+function detectChangelogTitle(file) {
+  try {
+    const text = fs.readFileSync(path.resolve(process.cwd(), file), 'utf8');
+    const first = text.split('\n').find(l => l.trim() !== '');
+    // a single '#' ATX header (rejects '##', '###', …) with actual text
+    if (first && /^#\s+\S/.test(first)) { return first.trim(); }
+  } catch (e) { /* missing or unreadable → treat as no title */ }
+  return null;
+}
+const CHANGELOG_TITLE = detectChangelogTitle(CHANGELOG_FILE);
 
 module.exports = {
   "branches": ["main"],
@@ -120,7 +139,10 @@ module.exports = {
         }
       }
     }],
-    ["@semantic-release/changelog", { "changelogFile": "CHANGELOG.md" }],
+    ["@semantic-release/changelog", Object.assign(
+      { "changelogFile": CHANGELOG_FILE },
+      CHANGELOG_TITLE ? { "changelogTitle": CHANGELOG_TITLE } : {}
+    )],
     ["@semantic-release/exec", {
       "prepareCmd": [
         "sed -i 's/@version.*/@version        ${nextRelease.version}/' ifonts.user.css",
