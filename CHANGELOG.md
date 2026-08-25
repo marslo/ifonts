@@ -2,11 +2,11 @@
 
 ### Others
 
-* **github:** extend mono font to react diff view and refine code selectors ([](https://github.com/marslo/ifonts/commit/243ef73b6296a4ac446247e9331d53ace660ad5f))
+* **github:** extend mono font to react diff view and refine code selectors ([243ef73](https://github.com/marslo/ifonts/commit/243ef73b6296a4ac446247e9331d53ace660ad5f))
 
 ### CI/CD
 
-* **releaserc.js:** refine changelog rendering with standard scoped/linked commit lines and h1-title reuse ([](https://github.com/marslo/ifonts/commit/df11ac7216f9f7d6a96afbe3ba221c4803b31864))
+* **releaserc.js:** refine changelog rendering with standard scoped/linked commit lines and h1-title reuse ([df11ac7](https://github.com/marslo/ifonts/commit/df11ac7216f9f7d6a96afbe3ba221c4803b31864))
 
 ## [4.1.4](https://github.com/marslo/ifonts/compare/v4.1.3...v4.1.4) (2026-08-12)
 
