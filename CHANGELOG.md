@@ -1,3 +1,13 @@
+## [4.1.6](https://github.com/marslo/ifonts/compare/v4.1.5...v4.1.6) (2026-08-26)
+
+### Bug Fixes
+
+* **releaserc.js**: repair empty commit links and align changelog entries to standard scoped/linked format ([32c7b08](https://github.com/marslo/ifonts/commit/32c7b08e95f63311c840dcff7b344080eaa18b2e))
+
+### Others
+
+* **jenkins**: using different mono fonts for pipeline graph view ([6aa6a10](https://github.com/marslo/ifonts/commit/6aa6a10e6df5f8262cc7bf35f79ecc215a401a0a))
+
 ## [4.1.5](https://github.com/marslo/ifonts/compare/v4.1.4...v4.1.5) (2026-08-25)
 
 ### Others
