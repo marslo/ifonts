@@ -1,3 +1,13 @@
+## [4.1.7](https://github.com/marslo/ifonts/compare/v4.1.6...v4.1.7) (2026-08-26)
+
+### Others
+
+* **git-scm**: add git-scm.com/docs width and font overrides ([088aac2](https://github.com/marslo/ifonts/commit/088aac244a6e2e0d624ae2ca146a833d49a85a70))
+  - widen docs wrapper to `85vw`, keep horizontally centered
+  - pin toc sidebar width and let content flex to fill remaining space
+  - keep wide <pre> code blocks scrolling internally instead of overflowing
+  - apply mono fonts to code, pre, and synopsis blocks
+
 ## [4.1.6](https://github.com/marslo/ifonts/compare/v4.1.5...v4.1.6) (2026-08-26)
 
 ### Bug Fixes
