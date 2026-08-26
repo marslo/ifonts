@@ -306,15 +306,23 @@
     color: #696969 !important;
     font-style: italic !important;
   }
-  /* pipeline graph view */
+  /* ── pipeline graph view - pipeline-console ── */
+  div.log-card--header, .log-card--header.step-detail-group, .log-card--header.step-header {
+    font-family: 'VictorMono Nerd Font Mono', 'LXGWWenKaiMono Nerd Font Mono', ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, 'Liberation Mono', monospace !important;
+    font-size: var(--font-size-big-mono) !important;
+    font-weight: 600 !important;
+  }
+  div.log-card--text {
+    font-family: 'AtkynsonNext Nerd Font' !important;
+  }
   .css-9l3uo3 {
     font-family: var(--font-family-mono) !important;
+    font-size: var(--font-size-small-mono) !important;
     font-style: italic !important;
-    font-size: 16px;
   }
   .css-3wafqk {
-    font-family: var(--font-family-mono) !important;
-    font-size: var(--font-size-normal-mono) !important;
+    font-family: 'VictorMono Nerd Font Mono', 'LXGWWenKaiMono Nerd Font Mono', ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, 'Liberation Mono', monospace !important;
+    font-size: var(--font-size-big-mono) !important;
     white-space: pre-wrap !important;
   }
 
