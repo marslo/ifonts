@@ -1805,6 +1805,49 @@
   }
 } /* @-moz-document: fossa */
 
+@-moz-document domain("git-scm.com") {
+
+  /**
+   * git-scm.com/docs
+  **/
+
+  /* widen the outer docs wrapper to 85vw, keep horizontally centered */
+  .inner,
+  #content-wrapper {
+    width: 85vw !important;
+    max-width: 85vw !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+
+  /* keep the toc sidebar at its natural width; never let it shrink */
+  #sidebar {
+    flex: 0 0 auto !important;
+  }
+
+  /* content takes only the remaining space (flex-basis:0), min-width:0 lets it shrink so wide <pre> code blocks scroll internally instead of overflowing */
+  #content {
+    flex: 1 1 0 !important;
+    width: auto !important;
+    max-width: none !important;
+    min-width: 0 !important;
+  }
+
+  code,
+  #documentation #main dt.hdlist1,
+  #documentation #main p em {
+    font-family: var(--font-family-mono-2) !important;
+    font-size: var(--font-size-normal-mono) !important;
+  }
+
+  pre,
+  #documentation #main div.verseblock pre.content {
+    font-family: var(--font-family-mono) !important;
+    font-size: var(--font-size-big-mono) !important;
+  }
+
+} /* @-moz-document: git-scm.com */
+
 @-moz-document domain("gemini.google.com") {
 
   /**
