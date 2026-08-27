@@ -7,7 +7,7 @@
 @homepageURL    https://github.com/marslo/ifonts
 @updateURL      https://github.com/marslo/ifonts/raw/main/ifonts.user.css
 @advanced       text font-family-sans        "Sans Fonts"        ""Titillium Nerd Font Upright", "Titillium Nerd Font", "Gisha Nerd Font", "Recursive Sans Casual Static Nerd Font", "Yoshe Shayufeite Nerd Font", "MicrosoftYaHei Nerd Font", "LXGWBright Nerd Font", "Qian Li Jiang Shan Nerd Font", "MFeltPenPRC Nerd Font", "MFeltPenHKSemi Nerd Font", "Grandstander Nerd Font", "Ubuntu", "Candara Nerd Font", "Titillium Up", Titillium, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Font Text""
-@advanced       text font-family-mono        "Mono Fonts"        ""OperatorMonoSSmLig Nerd Font Mono", "OperatorMonoLig Nerd Font Mono", "OperatorMono Nerd Font Mono", "JetBrainsMono Nerd Font Mono", "RecMonoCasual Nerd Font Mono", "Monaco Nerd Font Mono", Menlo, "Andale Mono", "Ubuntu Mono", "Monofur Nerd Font Mono", Consolas, "Yozai Nerd Font""
+@advanced       text font-family-mono        "Mono Fonts"        ""OperatorMonoSSmLig Nerd Font Mono", "OperatorMonoLig Nerd Font Mono", "OperatorMono Nerd Font Mono", "Lekton Nerd Font Mono", "JetBrainsMono Nerd Font Mono", "RecMonoCasual Nerd Font Mono", "Monaco Nerd Font Mono", Menlo, "Andale Mono", "Ubuntu Mono", "Monofur Nerd Font Mono", Consolas, "Yozai Nerd Font""
 @advanced       text font-family-handwritten "Handwritten Fonts" ""Papyrus Nerd Font", fantasy"
 @advanced       text font-family-icon        "Icon Fonts"        ""Google Material Icons", "Material Icons Extended", entypo, "Adgs Icons", "Google Symbols", "Font Awesome 7 Pro", "Font Awesome 5 Free", "Font Awesome 5 Pro", "Font Awesome 6 Free", "Font Awesome 6 Pro", FontAwesome, "Glyphicons Halflings", ReadMe-Icons, StructureFontAwesome, VideoJS, codicon, controlIcons, iconfont, iconfont-luckysheet, icozoom, retina_icons, streamline, union-design-icons, yunfont, okticon, docons, zipformplus, "Font Awesome 6 Brands", octicons, perforceIcons, FontADP, "Support MDL2 Assets", geico, marvell-icons, icomoon, element-icons, olive-icons, "SF Pro Icons", Iconochive-Regular, sans-serif"
 ==/UserStyle== */
@@ -45,6 +45,7 @@
 :root {
   --font-family-sans: /*[[font-family-sans]]*/;
   --font-family-mono: /*[[font-family-mono]]*/;
+  --font-family-mono-accent: 'VictorMono Nerd Font Mono', 'Lekton Nerd Font Mono', 'LXGWWenKaiMono Nerd Font Mono', ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, 'Liberation Mono', monospace;
   --font-family-handwritten: /*[[font-family-handwritten]]*/;
   --font-family-icon: /*[[font-family-icon]]*/;
   --font-family-override: /*[[font-family-sans]]*/;
@@ -227,11 +228,18 @@
     line-height: 1.5em !important;
   }
   span[class*='pipeline-node']::before {                      /* parallel nodename */
-    font-family: var(--font-family-mono) !important;
+    font-family: 'Lekton Nerd Font Mono', var(--font-family-mono) !important;
     font-size: var(--font-size-normal-mono) !important;
     font-style: italic !important;
   }
 
+  pre#out.console-output span.timestamp,                      /* console output timestamp */
+  pre#out.console-output span.timestamp b,
+  pre#out.console-output span.timestamp * {
+    font-family: 'Lekton Nerd Font Mono', var(--font-family-mono-accent) !important;
+    color: #696969 !important;
+    font-style: italic !important;
+  }
   [class*="ace_"]:not([class*="workspace"], [class*="workplace__"]),
   [class*="ace_"]:not([class*="workspace"], [class*="workplace__"]) *,
   textarea.ace_text-input,
@@ -302,18 +310,21 @@
   .ace-tm .ace_comment, span.cm-comment {                     /* comments */
     color: darkgray !important;
   }
-  .console-output span.timestamp b {                          /* console output timestamp */
-    color: #696969 !important;
-    font-style: italic !important;
-  }
+
   /* ── pipeline graph view - pipeline-console ── */
   div.log-card--header, .log-card--header.step-detail-group, .log-card--header.step-header {
-    font-family: 'VictorMono Nerd Font Mono', 'LXGWWenKaiMono Nerd Font Mono', ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, 'Liberation Mono', monospace !important;
+    font-family: var(--font-family-mono-accent) !important;
     font-size: var(--font-size-big-mono) !important;
     font-weight: 600 !important;
   }
+  div.pgv-step-detail-header__actions span,                   /* higher-version pgv - timestamp */
+  div.pgv-step-detail-header__content span,                   /* higher-version pgv - content */
+  div.pgv-tree-item__description, div.pgv-tree-item__name,    /* higher-version pgv - sidebar */
   div.log-card--text {
     font-family: 'AtkynsonNext Nerd Font' !important;
+  }
+  div.pgv-step-detail-header__content span {
+    font-size: var(--font-size-normal-sans) !important;
   }
   .css-9l3uo3 {
     font-family: var(--font-family-mono) !important;
@@ -321,7 +332,7 @@
     font-style: italic !important;
   }
   .css-3wafqk {
-    font-family: 'VictorMono Nerd Font Mono', 'LXGWWenKaiMono Nerd Font Mono', ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, 'Liberation Mono', monospace !important;
+    font-family: var(--font-size-big-mono-accent) !important;
     font-size: var(--font-size-big-mono) !important;
     white-space: pre-wrap !important;
   }
@@ -593,17 +604,19 @@
   }
 
   pre:not(.pm4ll46 > pre, #char-bar pre, [class*="dashboard-break-word"], [class*="masked-font"], [class*="_13"], :has(.sha-block)) {
-    /* apply mono font to `pre` that meets the criteria */
-    font-family: var(--font-family-mono) !important;
+    /* apply mono font to `pre` that meets the criteria ── `&` == `pre:not(...)` */
+    &,
     /* remove the mono font from a specific element inside the `pre` tag */
-    & *:not(ul, ol, kbd, p[class*="paragraph"], [class*="heading"], [class*="_1t"] *) {
+    & *:not(ul, ol, kbd, p[class*="paragraph"], [class*="heading"], [class*="_1t"] *),
+    & code,
+    &.code * {
       font-family: var(--font-family-mono) !important;
+      font-size: var(--font-size-small-mono) !important;
     }
   }
 
   /* div[class*="comment"] code,*/
   .markdown-body :is(pre, pre *),
-  pre.code *,
   .code-line,
   .command,                                                   /* commandlineful.com */
   input :where(code, pre),
@@ -1836,7 +1849,7 @@
   code,
   #documentation #main dt.hdlist1,
   #documentation #main p em {
-    font-family: var(--font-family-mono-2) !important;
+    font-family: var(--font-family-mono-accent) !important;
     font-size: var(--font-size-normal-mono) !important;
   }
 
