@@ -1,3 +1,9 @@
+## [4.1.8](https://github.com/marslo/ifonts/compare/v4.1.7...v4.1.8) (2026-08-27)
+
+### Others
+
+* **jenkins**, **timestamp**: using `Lekton Nerd Font Mono` font for timestamp in jenkins console output ([7654aca](https://github.com/marslo/ifonts/commit/7654acaf4d1ef384d02e3438187704b9808d5b98))
+
 ## [4.1.7](https://github.com/marslo/ifonts/compare/v4.1.6...v4.1.7) (2026-08-26)
 
 ### Others
