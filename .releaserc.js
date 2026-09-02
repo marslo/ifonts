@@ -167,8 +167,8 @@ module.exports = {
     ["@semantic-release/exec", {
       "prepareCmd": [
         "sed -i 's/@version.*/@version        ${nextRelease.version}/' ifonts.user.css",
-        "pre-commit run --files CHANGELOG.md ifonts.user.css",
-        "true"
+        // `|| true` keeps the release going when a hook rewrites a file and exits non-zero
+        "pre-commit run --files CHANGELOG.md ifonts.user.css || true"
       ].join(' && ')
     }],
     ["@semantic-release/git", {

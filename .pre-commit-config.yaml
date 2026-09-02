@@ -1,10 +1,13 @@
 # yamllint disable rule:indentation
 ---
-# pin the Node used by node-language hooks (stylelint) to an LTS whose npm (10.x)
-# still tolerates the deprecated `--ignore-prepublish` flag that pre-commit 4.6.x
-# passes during hook install. Node 24+/npm 11 hard-error on it (EUNKNOWNCONFIG).
+# pin the Node used by node-language hooks (stylelint) to an LTS whose npm (10.x) still tolerates the deprecated `--ignore-prepublish` flag that pre-commit 4.6.x passes during hook install. Node 24+/npm 11 hard-error on it (EUNKNOWNCONFIG).
 default_language_version:
   node: 22.11.0
+
+# `pre-commit install` installs BOTH git hooks (so the commit-msg check activates without --hook-type)
+default_install_hook_types: [pre-commit, commit-msg]
+# scope every hook to the pre-commit stage by default; hooks that opt into another stage (e.g. Typos on commit-msg) override this, so unrestricted hooks no longer re-run at commit-msg
+default_stages: [pre-commit]
 
 repos:
   - repo: https://github.com/pre-commit/pre-commit-hooks
@@ -52,6 +55,13 @@ repos:
   - repo: https://github.com/crate-ci/typos
     rev: v1.49.0
     hooks:
+      # scan file contents (auto-fixes in place)
       - id: typos
         name: Typos
         args: ['--write-changes', '--force-exclude']
+      # scan the commit message itself; no --write-changes -> only fail, never rewrite the message
+      - id: typos
+        name: Typos (commit message)
+        alias: typos-commit-msg
+        stages: [commit-msg]
+        args: ['--force-exclude']

@@ -1298,7 +1298,7 @@
 
   /* https://python.swaroopch.com/basics.html */
   .book .book-body div.page-wrapper div.page-inner {
-    max-width: 80vw !important;
+    max-width: min(90vw, calc(100% - 200px)) !important;
   }
 
 
@@ -1634,7 +1634,11 @@
   }
 
   /* ── github.io (github pager / gitbook) ─────────────────── */
-  .markdown-section *:not(mark, span, h1, h2, h3, h4, a>code) {
+  .markdown-section code {
+    font-family: var(--font-family-mono) !important;
+    font-size: var(--font-size-small-mono) !important;
+  }
+  .markdown-section *:not(mark, span, h1, h2, h3, h4, a>code, code) {
     font-size: 16px !important;
   }
   .markdown-section a,
@@ -1660,7 +1664,7 @@
     color: #b9b9b9 !important;
   }
   span.token.punctuation { color: #93a1a1 !important; }
-  .page-inner { max-width: 85vw !important; }
+  .page-inner { max-width: min(90vw, calc(100% - 200px)) !important; }   /* reserve nav-arrow gutter; see page-inner rule above */
 
   .code-wrapper pre > code > span.code-line:before {          /* line number */
     font-family: var(--font-family-mono) !important;
