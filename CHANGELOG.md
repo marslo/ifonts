@@ -1,3 +1,9 @@
+## [4.1.9](https://github.com/marslo/ifonts/compare/v4.1.8...v4.1.9) (2026-09-02)
+
+### Others
+
+* **markdown**, **code**, **gitbook**: fix the gitbook 80vw/85vw width issue; add `.markdown-section code` style ([0e3e854](https://github.com/marslo/ifonts/commit/0e3e854eb61d199eb3c2fa02aba971a4c73abae1))
+
 ## [4.1.8](https://github.com/marslo/ifonts/compare/v4.1.7...v4.1.8) (2026-08-27)
 
 ### Others
