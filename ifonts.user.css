@@ -230,7 +230,7 @@
     [title="Class Descriptor"]
   ) :not(button):not(button+div):not(
     [class*="aui-dropdown2"] *,
-    [class*="badge"]
+    [class*="badge"],
     [class*="btn"],
     [class*="logo"],
     [class*="text-normal"] *,
@@ -238,18 +238,18 @@
     a[class*="Tab"],
     a[class*="btn"],
     a[class*="tab"],
-    i[class*="fa"],
+    i[class*="fa"]
   ),
   div[class*="headline"]:not(
-    [class*="-view-model"]
-    [class*="container__"],
+    [class*="-view-model"],
+    [class*="container__"]
   ) *:not(
-    [class*="bot-status-badge"]
+    [class*="bot-status-badge"],
     [class*="btn"],
     [class*="byline__"],
     [class*="container__"],
     [class*="headline__"],
-    [class*="timestamp"],
+    [class*="timestamp"]
   ),
   div#click-to-connect > div > :not(h1):not(h2),
   div[class*="style_CardRow"] h1,
@@ -282,13 +282,11 @@
       [class*="fontBodyMedium"],
       [class*="panel-title"],
       [class*="spanh2"],
-      [class*="spanh2"],
       [class*="style-name"],
       [class*="t-"],
-      [class*="text-sm"],
-      [data-v-0b7a2eac]
+      [data-v-0b7a2eac],
       [dir*="auto"],
-      [id*="directions-mode-group"],
+      [id*="directions-mode-group"]
    ) >
     :is(
       a:not([class*="btn"], [class*="css-"]),
@@ -1053,7 +1051,6 @@
   i[class*="fa-"],
   span[class*="glyphicon"],
   span[class*="style_Navbar"], span[class*="avatar"]:not([class*="gravatar-text"]), span[class*="icon-"],
-  i[class*="s-fa-"],
   i[class*="material-icons-"],
   i[class*="google-material-icons"],
   i[class*="iconfont"],
