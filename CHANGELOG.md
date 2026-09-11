@@ -1,3 +1,11 @@
+## [5.0.1](https://github.com/marslo/ifonts/compare/v5.0.0...v5.0.1) (2026-09-11)
+
+### Bug Fixes
+
+* **ifonts**: repair malformed :not() lists and drop redundant [class*] selectors ([593ccc3](https://github.com/marslo/ifonts/commit/593ccc309acf00bc2f9d6993fd1979141be0b2b8))
+  - add/remove commas in :not() lists that Stylus flagged as "Unexpected )" parse errors
+  - drop a duplicate [class*="spanh2"] and substring-redundant tokens (text-sm ⊂ t-, s-fa- ⊂ fa-)
+
 ## [5.0.0](https://github.com/marslo/ifonts/compare/v4.1.9...v5.0.0) (2026-09-11)
 
 ### ⚠ BREAKING CHANGE
