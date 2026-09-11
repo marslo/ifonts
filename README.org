@@ -8,6 +8,7 @@
 ** installation
 + install stylus extension for [[https://chrome.google.com/webstore/detail/stylus/clngdbkpkpeebahjckkjfobafhncgmne][Stylus for Chrome]] | [[https://chrome.google.com/webstore/detail/stylish-custom-themes-for/fjnbnpbmkenffdnngjfgmeleoegfcffe][Stylish for Chrome]] | [[https://addons.mozilla.org/pt-BR/firefox/addon/styl-us/][Firefox]] | [[https://chromewebstore.google.com/detail/stylus/clngdbkpkpeebahjckkjfobafhncgmne][edge]]
 + click to install 📦 [[https://github.com/marslo/ifonts/raw/main/ifonts.user.css][marslo/ifonts]] | [[https://userstyles.world/api/style/5264.user.css][iFonts (marslo)]]
++ ~github~ / ~jenkins~ split into standalone styles: 📦 [[https://github.com/marslo/ifonts-github][marslo/ifonts-github]] | [[https://github.com/marslo/ifonts-jenkins][marslo/ifonts-jenkins]]
 
 ** iFonts (marslo)
 + ~v2.2.2~ Operator Mono Lig Nerd Font Mono
