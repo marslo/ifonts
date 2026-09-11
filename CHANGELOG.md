@@ -1,3 +1,21 @@
+## [5.0.0](https://github.com/marslo/ifonts/compare/v4.1.9...v5.0.0) (2026-09-11)
+
+### ⚠ BREAKING CHANGE
+
+* **ifonts:** ifonts.user.css no longer styles github or jenkins; install ifonts-github / ifonts-jenkins separately for those.
+
+### Code Refactoring
+
+* **ifonts**: split github and jenkins rules out into standalone userstyles ([26bef99](https://github.com/marslo/ifonts/commit/26bef994fe1e9664003b27ba3159d7191876082e))
+  - remove the jenkins and github @-moz-document blocks, now shipped as standalone ifonts-jenkins / ifonts-github styles
+  - exclude github.com/io from the non-jenkins block and strip leftover github-only selectors from shared rules
+  - deduplicate and reflow the universal :not() selector lists
+  - bump stylelint and typos pre-commit hook revisions
+
+  ifonts-github:  https://github.com/marslo/ifonts-github  | marslo/ifonts-github@a0f1f1abcee13fd66f4c1ae3954f4b9a858fa3a1
+  ifonts-jenkins: https://github.com/marslo/ifonts-jenkins | marslo/ifonts-jenkins@0867e952140a3a47a4881e02fa34aa02caee4abf
+  BREAKING CHANGE: ifonts.user.css no longer styles github or jenkins; install ifonts-github / ifonts-jenkins separately for those.
+
 ## [4.1.9](https://github.com/marslo/ifonts/compare/v4.1.8...v4.1.9) (2026-09-02)
 
 ### Others
