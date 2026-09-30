@@ -1,3 +1,13 @@
+## [5.1.0](https://github.com/marslo/ifonts/compare/v5.0.1...v5.1.0) (2026-09-30)
+
+### Features
+
+* **gemini**: update gemini domain due to new layers; setup local `BlexMonoLigNFM-Book`/`BlexMonoLigNFM-Text` as `--font-family-mono-accent` for code block in gemini ([dd81843](https://github.com/marslo/ifonts/commit/dd818437c075068eada66c02c1e5e920ee406215))
+
+### Bug Fixes
+
+* exclude `githubusercontent` from universal ifonts stylus ([3ba4ebe](https://github.com/marslo/ifonts/commit/3ba4ebedc064a986f154c3148a00e94de2f1df68))
+
 ## [5.0.1](https://github.com/marslo/ifonts/compare/v5.0.0...v5.0.1) (2026-09-11)
 
 ### Bug Fixes
