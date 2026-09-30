@@ -22,6 +22,7 @@
 /* ║                 global: shared definitions                 ║ */
 /* ╚════════════════════════════════════════════════════════════╝ */
 
+/* ── shared definitions ── */
 @font-face {
   font-family: "San Francisco";
   font-weight: 400;
@@ -345,7 +346,7 @@
 
   /* ── code block ─────────────────────────────────────────── */
   .markdown-body :is(code, code *),
-  [class*="markdown"]:not([class*="markdown-section"]) code {
+  [class*="markdown"]:not([class*="markdown-section"]) code:not([data-path-to-node]) {                         /* data-path-to-node: gemini code block */
     font-family: var(--font-family-mono) !important;
   }
 
@@ -354,11 +355,11 @@
     font-family: var(--font-family-mono) !important;
   }
 
-  pre:not(.pm4ll46 > pre, #char-bar pre, [class*="dashboard-break-word"], [class*="masked-font"], [class*="_13"], :has(.sha-block)) {
+  pre:not(.pm4ll46 > pre, [class*="bodyCopy--"] > pre, #char-bar pre, [class*="dashboard-break-word"], [class*="masked-font"], [class*="_13"], :has(.sha-block)) {
     /* apply mono font to `pre` that meets the criteria ── `&` == `pre:not(...)` */
     &,
     /* remove the mono font from a specific element inside the `pre` tag */
-    & *:not(ul, ol, kbd, p[class*="paragraph"], [class*="heading"], [class*="_1t"] *),
+    & *:not(ul, ol, kbd, p[class*="paragraph"], [class*="heading"], [class*="_1t"] *, [class*="ng-tns-"] *),   /* ng-tns-: gemini code block */
     & code,
     &.code * {
       font-family: var(--font-family-mono) !important;
@@ -366,10 +367,15 @@
     }
   }
 
+  /* assembla code block */
+  [class*="bodyCopy--"] pre {
+    font-size: var(--font-size-normal-mono) !important;
+  }
+
   /* div[class*="comment"] code,*/
   .markdown-body :is(pre, pre *),
   .code-line,
-  .command,                                                   /* commandlineful.com */
+  .command,                                                         /* commandlineful.com */
   input :where(code, pre),
   textarea :where(code, pre),
   [class*="highlight"] :where(pre, code),
@@ -377,7 +383,7 @@
   div.ace_content,
   .solarized-dark,
   .EnlighterJS *,
-  .font-mono,                                                 /* highlightjs.org */
+  .font-mono:not([class*="text-[10px]"], [class*="text-[11px]"]),   /* highlightjs.org :not(pulse) */
   .changeset-message,
   .node-log-frame,
   .lines-content *,
@@ -387,7 +393,7 @@
   [class*="linenumber"] *, [class*="blob"] code,
   [class*="terminal"]:not([class*="main-view"]) *:not([class*="icon"]):not([class*="num-votes"]):not([class*="xterm-"]):not([class*="bar__title"]), #terminal *:not([class*="icon"]),
   .CodeBlock pre[class*=language-]>code *,
-  .cheatsheet .cmd {                                          /* https://tmuxcheatsheet.com */
+  .cheatsheet .cmd {                                                /* https://tmuxcheatsheet.com */
     font-family: var(--font-family-mono) !important;
     font-size: var(--font-size-big-mono) !important;
     line-height: 1.5em !important;
@@ -588,26 +594,28 @@
     [class*="ic-field-required"],
     [id*="repo-select"], [id*="org-select"],
     [name="securityQuestion"],
-    [id*="ups-"], [class*="ups-"]
+    [id*="ups-"], [class*="ups-"],
+    [class*="status-sel"], [id*="unified-sdk"], [class="vh-input"],      /* release tracker */
+    [class*="appearance-none"], [class*="text-sm"]                       /* puse */
   ),
   input:not(
     [class*="button"], [type*="button"],
     [type*="submit"],
-    [type*="text"], [class*="txt"],
+    [type*="text"], [class*="txt"], [class*="text"],
     [name*="summary"],
     [id*="user-code-"],
     [class*="P2c8Dd"],
     [name*="searchString"],
-    [id*="f_user"],
-    [id*="f_pass"],
+    [id*="f_user"], [id*="f_pass"],
     [id*="gs_displayName"],
-    [class*="text"],
     [class*="UnstyledTextInput"],
     [class*="gb_pe"],
     [role*="combobox"],
     [id="Password"],
     [name="limit"],
-    [class*="el-input__"]
+    [class*="el-input__"],
+    [class*="wiki-page-url-"], [id="top_nav_search_query"],              /* assembla */
+    [class*="vh-input"]
   ),
   input:is(
     [data-cy="apiKeyInput"],
@@ -759,7 +767,11 @@
     font-size: var(--font-size-normal-sans) !important;
   }
 
-  tt,
+  tt {                                                                                          /* <code></code> in comments */
+    font-family: var(--font-family-mono) !important;
+    font-size: var(--font-size-xsmall-mono) !important;
+  }
+
   div[class*="ghx-key"] > a, td.issuekey,
   .user-content-block :is(code, code *, pre code),
   .cke_editable :where(code, code *, pre),
@@ -1336,33 +1348,45 @@
    * gemini
   **/
 
+  /* ── BlexMonoLig Nerd Font Mono : book(350) → normal; text(450) → bold ── */
+  /* normal(400) → Book(350) */
+  @font-face { font-family:'Blex'; font-weight:normal; font-style:normal; src: local('BlexMonoLigNFM-Book'),       local('BlexMonoLig Nerd Font Mono Book');        }
+  @font-face { font-family:'Blex'; font-weight:normal; font-style:italic; src: local('BlexMonoLigNFM-BookItalic'), local('BlexMonoLig Nerd Font Mono Book Italic'); }
+  /* bold(700) → Text(450) */
+  @font-face { font-family:'Blex'; font-weight:bold;   font-style:normal; src: local('BlexMonoLigNFM-Text'),       local('BlexMonoLig Nerd Font Mono Text');        }
+  @font-face { font-family:'Blex'; font-weight:bold;   font-style:italic; src: local('BlexMonoLigNFM-TextItalic'), local('BlexMonoLig Nerd Font Mono Text Italic'); }
+
+  :root {
+      --font-family-mono-accent: "Blex", "Google Sans Code", ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, 'Liberation Mono', monospace;
+  }
+
   /* control the width of the outer container at the bottom and force it to be horizontally centered */
   .bottom-container,
   .input-area-container {
-      max-width: 85vw !important;
-      width: 100% !important;
-      margin-left: auto !important;
-      margin-right: auto !important;
+    max-width: 85vw !important;
+    width: 100% !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
   }
 
   /* fix the input box overflow issue (wrap the icon) */
   .text-input-field {
-      max-width: 100% !important;
-      width: 100% !important;
-      box-sizing: border-box !important;
+    max-width: 100% !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
   }
   .trailing-actions-wrapper {
-      flex-shrink: 0 !important;
+    flex-shrink: 0 !important;
   }
 
   /* chat history is forced to be horizontally centered */
   .conversation-container,
   infinite-scroller,
   chat-history {
-      max-width: 85vw !important;
-      width: 100% !important;
-      margin-left: auto !important;
-      margin-right: auto !important;
+    max-width: 85vw !important;
+    width: 100% !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
   }
 
   /* extend qa container and ai reply, fill the expanded parent container */
@@ -1371,15 +1395,38 @@
   .user-query-container,
   model-response,
   message-viewer,
-  .message-content {
-      max-width: 100% !important;
-      width: 100% !important;
+  .message-content,
+  .model-response-text,       /* AI reply text layer */
+  generative-ui-response,     /* AI UI core components */
+  dual-model-response {       /* dual-model contrast containers (occasionally) */
+    max-width: 100% !important;
+    width: 100% !important;
   }
 
-  /* prevent orizontal scrollbars */
+  /* remove restrictions on hard-coding (708px) deeply nested markdown content */
+  .markdown,
+  .md-content,
+  .markdown-main-panel,
+  .markdown > *,
+  .md-content > *,
+  .markdown-main-panel > *,
+  thinking-overlay,           /* thinking animation */
+  .thinking-container {       /* thinking content */
+    max-width: 100% !important;
+  }
+
+  /* prevent horizontal scrollbars */
   .code-block,
   pre {
-      max-width: 100% !important;
+    max-width: 100% !important;
+  }
+
+  /* action buttons row (thumb up/down, regenerate, share) — drop the 708px cap and auto-centering so the icons sit left under the reply */
+  .response-container-footer,
+  message-actions {
+    max-width: 100% !important;
+    width: 100% !important;
+    margin-inline: 0 !important;
   }
 
   /* question bubble */
@@ -1387,18 +1434,28 @@
     max-width: 60% !important;
   }
 
+
   /* override the hardcoded 692px max-width on the inner table container */
   div.table-block,
   .table-block.new-table-style {
-      max-width: 100% !important;
-      width: 100% !important;
+    max-width: 100% !important;
+    width: 100% !important;
   }
 
   /* ensure the actual table element expands to fill the new container width */
   .table-content,
   .table-content table {
-      width: 100% !important;
-      max-width: 100% !important;
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+
+  /* code block fonts */
+  .markdown pre:not(#_),
+  .markdown pre code:not(#_),
+  .code-block:not(#_),
+  .code-block pre:not(#_),
+  .code-block code:not(#_) {
+    font-family: var(--font-family-mono-accent) !important;
   }
 
 } /* @-moz-document: gemini */

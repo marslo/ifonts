@@ -37,7 +37,11 @@
         "user-query",
         "user-query-content",
         "model-response",
-        "message-viewer"
+        "message-viewer",
+        "generative-ui-response",
+        "dual-model-response",
+        "thinking-overlay",
+        "message-actions"
       ]
     }],
     "no-descending-specificity": null,

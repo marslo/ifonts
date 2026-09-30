@@ -13,7 +13,8 @@ check-filename = true
 check-file = true
 unicode=true
 locale = "en"
-extend-ignore-re = []
+# skip git SHA in changelog commit links, e.g. [3ba4ebe](https://.../commit/3ba4ebedc06...)
+extend-ignore-re = ['\[[0-9a-f]{7,40}\]\(https?://[^)]*/commit/[0-9a-f]{7,40}\)']
 
 [default.extend-words]
 # <typo> = "<correction>"
