@@ -751,10 +751,10 @@
   h1#summary-val,
   div#attachmentmodule *:not([class*="icon-"]),
   input.aui-ss-field,
-  div.user-content-block *:not(tt):not(code):not(pre):not([class*="code-"]):not(pre>code *),    /* jira */
+  div.user-content-block *:not(tt):not(code):not(pre):not([class*="code-"]):not(pre>code *):not(h1):not(h2):not(h3):not(h4),    /* jira */
   [class*="dashboard-item"] iframe *,
   [class*="applinks*messages"],
-  [class*="jira-activity"] [class*="activity"], span.resolved-link,                             /* jira */
+  [class*="jira-activity"] [class*="activity"], span.resolved-link,                                                             /* jira */
   div[class*="ghx-"],
   [id*="details-module"] *:not([class*="icon"]),
   [class*="s-view-dd-"],
@@ -767,7 +767,7 @@
     font-size: var(--font-size-normal-sans) !important;
   }
 
-  tt {                                                                                          /* <code></code> in comments */
+  tt {                                                                                                                          /* <code></code> in comments */
     font-family: var(--font-family-mono) !important;
     font-size: var(--font-size-xsmall-mono) !important;
   }
