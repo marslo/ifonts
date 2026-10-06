@@ -1,3 +1,13 @@
+## [5.1.1](https://github.com/marslo/ifonts/compare/v5.1.0...v5.1.1) (2026-10-06)
+
+### Bug Fixes
+
+* **claude.ai**: fix the 85vw in new UI ([c2a9d49](https://github.com/marslo/ifonts/commit/c2a9d498b3df3735a79eda63ce3171d924ce5972))
+
+### Others
+
+* by pass h1/h2/h3/h4 font style settings from jira content body ([6bca415](https://github.com/marslo/ifonts/commit/6bca41536e8cd7e2a4f45bce4a7b50413a424779))
+
 ## [5.1.0](https://github.com/marslo/ifonts/compare/v5.0.1...v5.1.0) (2026-09-30)
 
 ### Features
