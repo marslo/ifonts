@@ -1488,6 +1488,16 @@
     margin-right: auto !important;
   }
 
+  /* conversation view is driven by the --transcript-width var (default 48rem) — raise it so transcript + composer widen in QA mode */
+  :root {
+    --transcript-width: 85vw !important;
+  }
+
+  /* fallback: cap the transcript-width-governed containers directly in case the var is redefined closer */
+  div[class*="transcript-width"] {
+    max-width: 85vw !important;
+  }
+
   /* user question bubble — 60% */
   [data-user-message-bubble="true"] {
     max-width: 60% !important;
