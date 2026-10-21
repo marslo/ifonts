@@ -676,7 +676,7 @@
   span[class*="gwd-span-"],
   div[class*="-ad-"] *,
   div[id*="user-panel"] a,
-  [role*="tooltip"],
+  [role*="tooltip"]:not(coral-icon),                                     /* not(portal) */
   [type*="button"]:not([class*="icon"]) {
     font-family: var(--font-family-sans) !important;
   }

@@ -41,7 +41,8 @@
         "generative-ui-response",
         "dual-model-response",
         "thinking-overlay",
-        "message-actions"
+        "message-actions",
+        "coral-icon"
       ]
     }],
     "no-descending-specificity": null,
