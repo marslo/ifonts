@@ -581,7 +581,8 @@
   *:not(
     [class*="is-fullwidt"],
     [class*="custom-select"],
-    [class*="gerrit"]
+    [class*="gerrit"],
+    [class*="courses-view-selector"]                                     /* learning center */
   ):not(p) > select:not(
     [class*="form-select"], [class*="select"], [id*="select-ember"],
     [class*="com-google-gerrit"],
@@ -615,7 +616,8 @@
     [name="limit"],
     [class*="el-input__"],
     [class*="wiki-page-url-"], [id="top_nav_search_query"],              /* assembla */
-    [class*="vh-input"]
+    [class*="vh-input"],
+    [id*="lmn-input-text"]                                               /* learning center */
   ),
   input:is(
     [data-cy="apiKeyInput"],
@@ -629,7 +631,7 @@
     [class*="livestamp"],                                                /* confluence */
     [data-cy*="post-timestamp"],
     [data-uri*="cnn.com"]
-  ),                                                                     /* Json Viewer; not in discussions.apple.com */
+  ),                                                                     /* json viewer; not in discussions.apple.com */
   li.blockList {
     font-family: var(--font-family-mono) !important;
     font-size: var(--font-size-big-mono) !important;
@@ -676,7 +678,7 @@
   span[class*="gwd-span-"],
   div[class*="-ad-"] *,
   div[id*="user-panel"] a,
-  [role*="tooltip"]:not(coral-icon),                                     /* not(portal) */
+  [role*="tooltip"]:not(coral-icon),
   [type*="button"]:not([class*="icon"]) {
     font-family: var(--font-family-sans) !important;
   }
