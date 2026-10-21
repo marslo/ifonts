@@ -1,3 +1,14 @@
+## [5.1.2](https://github.com/marslo/ifonts/compare/v5.1.1...v5.1.2) (2026-10-21)
+
+### Bug Fixes
+
+* **tooltip**, **release**: exclude `coral-icon` from the tooltip font override, drop duplicated `BREAKING CHANGE` footers from release notes and bump typos hook ([8b39311](https://github.com/marslo/ifonts/commit/8b3931149fbdc51ba888281c78bf071d3cd8c668))
+
+### Documentation
+
+* update README ([f462e72](https://github.com/marslo/ifonts/commit/f462e72a4d41de9e1102a59ef4e79451c91c7e85))
+  - convert `README.org` headings, lists, links and quote to markdown
+
 ## [5.1.1](https://github.com/marslo/ifonts/compare/v5.1.0...v5.1.1) (2026-10-06)
 
 ### Bug Fixes
