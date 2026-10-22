@@ -163,6 +163,7 @@
     [class*="post-"],
     [class*="setting-"],
     [class*="sort-caret"],
+    [class*="symbols"],
     [class*="view-"],
     [class*="w3-"],
     [class*='wysiwyg-macro-*'],
@@ -1076,9 +1077,12 @@
   .codicon[class*="codicon-"],                                /* gitpod */
   span[class^="icon"]::before,                                /* https://www4.benefitsolver.com/benefits/BenefitSolverView */
   div.content-post-body-content p,
-  .google-symbols,
   .docon {                                                    /* microsoft doc */
     font-family: var(--font-family-icon) !important;
+  }
+  /* google symbols: shape ligatures ( e.g. `chrome_extension` ) in 'Google Symbols' first */
+  .google-symbols {
+    font-family: 'Google Symbols', var(--font-family-icon) !important;
   }
   /* https://kubernetes.io/docs/tutorials/kubernetes-basics/create-cluster/cluster-interactive/  -> `form_`: service now incident */
   div#course-details i[class*="fa"],
