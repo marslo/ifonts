@@ -1513,3 +1513,31 @@
   }
 
 } /* @-moz-document: claude.ai */
+
+@-moz-document regexp("^https?://userstyles\\.world/(edit/\\d+|add|import|style/\\d+(/.*)?)([?#].*)?$") {
+
+  /**
+   * userstyles.world
+   * edit / add / import / preview userstyle
+  **/
+
+  /* edit/add: form + alert width driven by --form-max-width; preview: main > * width driven by --layout-max-width — raise both to 85vw */
+  main#content {
+    --form-max-width: 85vw !important;
+    --layout-max-width: 85vw !important;
+  }
+
+  /* fallback: cap the main sections directly in case the vars are redefined closer */
+  main#content > * {
+    max-width: 85vw !important;
+  }
+
+  /* source code + description + notes textareas */
+  textarea#code[name="code"],
+  textarea#description[name="description"],
+  textarea#notes[name="notes"] {
+    font-family: var(--font-family-mono) !important;
+    font-size: var(--font-size-normal-mono) !important;
+  }
+
+} /* @-moz-document: userstyles.world */
