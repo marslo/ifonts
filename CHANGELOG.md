@@ -1,3 +1,19 @@
+## [5.1.3](https://github.com/marslo/ifonts/compare/v5.1.2...v5.1.3) (2026-10-22)
+
+### Bug Fixes
+
+* **icons**: keep google symbols ligatures intact by shaping them in 'Google Symbols' first and excluding them from the sans override ([8cd3266](https://github.com/marslo/ifonts/commit/8cd32662798b6e80cb2d9f0ba9efd9244dde27b3))
+  - move `.google-symbols` out of the shared icon rule into its own rule
+  - prefer 'Google Symbols' so ligatures like `chrome_extension` don't partially match other icon fonts
+  - exclude `[class*="symbols"]` from the global sans font override
+
+### Others
+
+* **userstyles**: widen userstyles.world edit/add form to `85vw` ([60f52e9](https://github.com/marslo/ifonts/commit/60f52e9ad041401e5a603eeb7dff90ea7a2c0be5))
+  - add a `@-moz-document` block scoped to the `/edit/<id>` and `/add` pages
+  - raise `--form-max-width` to `85vw` on `main#content`
+  - cap the main form and `section.alert` directly as a fallback
+
 ## [5.1.2](https://github.com/marslo/ifonts/compare/v5.1.1...v5.1.2) (2026-10-21)
 
 ### Bug Fixes
