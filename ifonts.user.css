@@ -810,6 +810,21 @@
   div#search-header-view > div.header-section-primary > h1.search-title {
     font-family: var(--font-family-handwritten) !important;
   }
+  /* create / edit issue dialog: 800px → 80vw ( centered via aui left / right / margin auto ) */
+  section.jira-dialog2.aui-dialog2-large {
+    width: 80vw !important;
+  }
+  /* linked issues: link type + issue picker full width, `+` popup button pinned to the right edge */
+  :is(#create-issue-dialog, #edit-issue-dialog) .issue-link-edit #issuelinks-linktype {
+    max-width: calc( 100% - 40px ) !important;
+  }
+  :is(#create-issue-dialog, #edit-issue-dialog) .issue-link-edit #issuelinks-issues-multi-select {
+    width: calc( 100% - 40px ) !important;
+  }
+  :is(#create-issue-dialog, #edit-issue-dialog) .issue-link-edit .issue-picker-popup {
+    right: 0 !important;
+    left: auto !important;
+  }
 
 
   /* ── confluence ─────────────────────────────────────────── */
