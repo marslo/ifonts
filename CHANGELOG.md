@@ -1,3 +1,18 @@
+## [5.2.0](https://github.com/marslo/ifonts/compare/v5.1.3...v5.2.0) (2026-10-27)
+
+### Features
+
+* **jira**: widen the large create / edit issue dialog from 800px to 80vw ([6ca8823](https://github.com/marslo/ifonts/commit/6ca88234d7ac456f266e2c136efbd279fb37b2dd))
+  - set `section.jira-dialog2.aui-dialog2-large` width to `80vw`
+  - keep aui `left` / `right` / `margin: auto` centering
+  - leave small / medium aui dialogs unchanged
+* **markdown**, **claude**, **pre-commit**: widen the local markdown preview and claude.ai home composer, and move stylelint hooks to node 26 ([aebf5cf](https://github.com/marslo/ifonts/commit/aebf5cf00872f2a193e073d2a8fe7230a16c3b5f))
+  - Markdown Previewer: https://chromewebstore.google.com/detail/markdown-previewer/nccgimhmfbjfiakcapgeofcfbpkpganp
+  - widen the local `file://*.md` markdown previewer article to `90cqw` of the content pane
+  - extend the claude.ai home page composer card from `max-w-[40rem]` to `85vw`
+  - pin node-language hooks to node `26.12.1`
+  - align `stylelint` dependency to `17.16.0`
+
 ## [5.1.3](https://github.com/marslo/ifonts/compare/v5.1.2...v5.1.3) (2026-10-22)
 
 ### Bug Fixes
