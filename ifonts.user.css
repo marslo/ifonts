@@ -1519,6 +1519,12 @@
     max-width: 85vw !important;
   }
 
+  /* home page composer card -> max-w-[40rem](680px), extend to 85vw */
+  div[data-chorus-card-slot][class*="max-w-[40rem]"] {
+    max-width: 85vw !important;
+    width: 100% !important;
+  }
+
   /* user question bubble — 60% */
   [data-user-message-bubble="true"] {
     max-width: 60% !important;
@@ -1560,3 +1566,28 @@
   }
 
 } /* @-moz-document: userstyles.world */
+
+@-moz-document regexp("^file://.*\\.md([?#].*)?$") {
+
+  /**
+   * markdown previewer
+  **/
+
+  /* content pane ( right of the outline sidebar ) as the cqw query container */
+  body.md-preview > main.md-content {
+    container-type: inline-size;
+  }
+
+  /* article width driven by --content-max-width — raise it to 90% of the content pane */
+  :root,
+  body.md-preview,
+  .md-body {
+    --content-max-width: 90cqw !important;
+  }
+
+  /* fallback: cap the article directly in case the var is redefined closer */
+  body.md-preview > main.md-content > .md-body {
+    max-width: 90cqw !important;
+  }
+
+} /* @-moz-document: local markdown preview */
