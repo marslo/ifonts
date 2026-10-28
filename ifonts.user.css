@@ -599,6 +599,7 @@
     [id*="repo-select"], [id*="org-select"],
     [name="securityQuestion"],
     [id*="ups-"], [class*="ups-"],
+    [class*="gwt-"],                                                     /* klocwork */
     [class*="status-sel"], [id*="unified-sdk"], [class="vh-input"],      /* release tracker */
     [class*="appearance-none"], [class*="text-sm"]                       /* puse */
   ),
@@ -1105,12 +1106,14 @@
   .fa, .section-directions, .fontHeadlineLarge, .file-name-idw,
 
    /* button--:  pypi */
-  .button:not(a):not(
+  .button:not(
+    a,
     [class*="aui-"],
     [value],
     [href="#"],
     [class*="button--"],
     [class*="feedback"],
+    [class*='gwt-'],                                           /* klocwork */
     #banner-dismiss,
     #singleSummaryButton
   ):not(
