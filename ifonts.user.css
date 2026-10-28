@@ -269,14 +269,16 @@
   .header h1[data-v-03dd129c],                                /* ⌍               */
   .app-layout-wrapper .title-wrapper h1[data-v-32d38c0c],     /* ⌏  artifactory  */
   h2[dir*="auto"] > code,                                     /* https://plugins.jenkins.io/kubernetes/ */
-  *:not(blockquote):not(
+  *:not(
+    blockquote,
     [class*="-card-"],
     [class*="innerCell"],
     [class*="title"],
     [id="tinymce"],
     [class*="panel"],
     [class*="MW9GI"],
-    [class*="InlineReview"]
+    [class*="InlineReview"],
+    [data-testid*="chat-title-"]                              /* claude.ai chat title */
   ) >
     h2:not(
       [class*="Overlay-"],
@@ -760,8 +762,7 @@
   [class*="jira-activity"] [class*="activity"], span.resolved-link,                                                             /* jira */
   div[class*="ghx-"],
   [id*="details-module"] *:not([class*="icon"]),
-  [class*="s-view-dd-"],
-  [class*="aui-dropdown"] strong {
+  [class*="s-view-dd-"] {
     font-family: var(--font-family-sans) !important;
     font-size: var(--font-size-normal-sans) !important;
   }
@@ -1110,7 +1111,8 @@
     [href="#"],
     [class*="button--"],
     [class*="feedback"],
-    #banner-dismiss
+    #banner-dismiss,
+    #singleSummaryButton
   ):not(
     :is([class*="gravatar-form__content"] .button),
     :is([class*="table__align"] .button)
@@ -1519,8 +1521,8 @@
     max-width: 85vw !important;
   }
 
-  /* home page composer card -> max-w-[40rem](680px), extend to 85vw */
-  div[data-chorus-card-slot][class*="max-w-[40rem]"] {
+  /* home page composer card -> max-w-[40rem] / max-w-[41rem], extend to 85vw */
+  div[data-chorus-card-slot][class*="max-w-["] {
     max-width: 85vw !important;
     width: 100% !important;
   }
@@ -1582,12 +1584,12 @@
   :root,
   body.md-preview,
   .md-body {
-    --content-max-width: 90cqw !important;
+    --content-max-width: 95cqw !important;
   }
 
   /* fallback: cap the article directly in case the var is redefined closer */
   body.md-preview > main.md-content > .md-body {
-    max-width: 90cqw !important;
+    max-width: 95cqw !important;
   }
 
 } /* @-moz-document: local markdown preview */
