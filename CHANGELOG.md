@@ -1,3 +1,15 @@
+## [5.2.1](https://github.com/marslo/ifonts/compare/v5.2.0...v5.2.1) (2026-10-28)
+
+### Bug Fixes
+
+* bypass the dropdown-list (select) and button for klocwork ([d878b83](https://github.com/marslo/ifonts/commit/d878b830b6e0054c5ed406482d8b3077f142128e))
+* **claude**, **markdown**: rematch the claude.ai home composer, and widen the markdown preview to `95cqw` ([0ab2c49](https://github.com/marslo/ifonts/commit/0ab2c498f851873dcbba4c9d677073915be59631))
+* **jira**: anchor the issue dialog suggestion dropdown below the active field instead of ajs's miscomputed inline position on the widened dialog ([5d56b68](https://github.com/marslo/ifonts/commit/5d56b689992f764ff38c66bc74b3a205ae4b86cd))
+  - set the focused / expanded dialog field as a css anchor
+  - position `.ajs-layer.active` below it, overriding inline `left` / `top`
+  - flip the dropdown above the field when no room below
+  - scope to the widened `jira-dialog2` large dialog only
+
 ## [5.2.0](https://github.com/marslo/ifonts/compare/v5.1.3...v5.2.0) (2026-10-27)
 
 ### Features
