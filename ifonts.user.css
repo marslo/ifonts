@@ -827,6 +827,16 @@
     right: 0 !important;
     left: auto !important;
   }
+  /* suggestion dropdown ( `body > .ajs-layer` ): anchored below the active dialog field, flipped above when no room; overrides the inline `left` / `top` */
+  section.jira-dialog2.aui-dialog2-large :is(input, textarea):is(:focus, [aria-expanded="true"]) {
+    anchor-name: --jira-dialog-field;
+  }
+  body:has(section.jira-dialog2.aui-dialog2-large :is(input, textarea):is(:focus, [aria-expanded="true"])) .ajs-layer.active {
+    position-anchor: --jira-dialog-field;
+    inset: auto !important;
+    position-area: bottom span-right;
+    position-try-fallbacks: flip-block;
+  }
 
 
   /* ── confluence ─────────────────────────────────────────── */
