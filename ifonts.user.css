@@ -607,6 +607,7 @@
     [class*="button"], [type*="button"],
     [type*="submit"],
     [type*="text"], [class*="txt"], [class*="text"],
+    :not([type]),                                                        /* implicit `type="text"` ( e.g. gmail search autocomplete ghost input ) */
     [name*="summary"],
     [id*="user-code-"],
     [class*="P2c8Dd"],
