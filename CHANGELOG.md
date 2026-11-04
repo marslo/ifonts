@@ -1,3 +1,13 @@
+## [5.2.2](https://github.com/marslo/ifonts/compare/v5.2.1...v5.2.2) (2026-11-04)
+
+### Bug Fixes
+
+* **input**: exclude inputs without a `type` attribute from the global mono / big-mono input rule so implicit text inputs like the gmail search autocomplete ghost keep the site font ([f36e79f](https://github.com/marslo/ifonts/commit/f36e79f823908657c9e7d8a926fe40ea9130a768))
+
+### Others
+
+* **jira**: add style for Jira label (epic label) and dashboard card style ([09fbd68](https://github.com/marslo/ifonts/commit/09fbd6875e8d7b3ad71ad13a17e201b40447bdf9))
+
 ## [5.2.1](https://github.com/marslo/ifonts/compare/v5.2.0...v5.2.1) (2026-10-28)
 
 ### Bug Fixes
