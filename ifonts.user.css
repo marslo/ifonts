@@ -43,6 +43,15 @@
   src: url('https://github.com/marslo/fonts/raw/fonts/Operator/OperatorMonoSSmLigNF/otf/OperatorMonoSSmLigNerdFontMono-LightItalic.otf') format('opentype');
 }
 
+/* ── BlexMonoLig Nerd Font Mono : book(350) → normal; text(450) → bold ── */
+/* normal(400) → Book(350) */
+@font-face { font-family:'Blex'; font-weight:normal; font-style:normal; src: local('BlexMonoLigNFM-Book'),       local('BlexMonoLig Nerd Font Mono Book');        }
+@font-face { font-family:'Blex'; font-weight:normal; font-style:italic; src: local('BlexMonoLigNFM-BookItalic'), local('BlexMonoLig Nerd Font Mono Book Italic'); }
+/* bold(700) → Text(450) */
+@font-face { font-family:'Blex'; font-weight:bold;   font-style:normal; src: local('BlexMonoLigNFM-Text'),       local('BlexMonoLig Nerd Font Mono Text');        }
+@font-face { font-family:'Blex'; font-weight:bold;   font-style:italic; src: local('BlexMonoLigNFM-TextItalic'), local('BlexMonoLig Nerd Font Mono Text Italic'); }
+
+
 :root {
   --font-family-sans: /*[[font-family-sans]]*/;
   --font-family-mono: /*[[font-family-mono]]*/;
@@ -586,7 +595,7 @@
     [class*="custom-select"],
     [class*="gerrit"],
     [class*="courses-view-selector"]                                     /* learning center */
-  ):not(p) > select:not(
+  ):not(p):not([class="col-phase"]) > select:not(                        /* tracker */
     [class*="form-select"], [class*="select"], [id*="select-ember"],
     [class*="com-google-gerrit"],
     [id*="version"],
@@ -740,7 +749,7 @@
 
   /* ── jira ───────────────────────────────────────────────── */
   .js-issue-list *,
-  span.aui-label,
+  /* span.aui-label, div[class*="ghx-"], */                                                                                     /* label (epic name) */
   table.issue-table p,
   div.tabwrap.aui-tabs,
   .message-container,
@@ -762,9 +771,9 @@
   [class*="dashboard-item"] iframe *,
   [class*="applinks*messages"],
   [class*="jira-activity"] [class*="activity"], span.resolved-link,                                                             /* jira */
-  div[class*="ghx-"],
-  [id*="details-module"] *:not([class*="icon"]),
-  [class*="s-view-dd-"] {
+  [id*="details-module"] *:not([class*="icon"], [class*="ghx-label"]),
+  [class*="s-view-dd-"],
+  div.ghx-summary, div.ghx-summary > span {
     font-family: var(--font-family-sans) !important;
     font-size: var(--font-size-normal-sans) !important;
   }
@@ -778,7 +787,18 @@
     font-size: var(--font-size-xsmall-mono) !important;
   }
 
-  div[class*="ghx-key"] > a, td.issuekey,
+  .tox .tox-statusbar__help-text,
+  a.aui-label {
+    font-family: "Blex", var(--font-family-mono-accent, monospace) !important;
+  }
+  .ghx-agile .aui-label {
+    font-family: "LektonLig Nerd Font Mono", var(--font-family-mono-accent, monospace) !important;
+    font-size: 15px !important;
+    font-weight: bold !important;
+    padding: 3px 5px !important;
+  }
+
+  div[class*="ghx-key"] > a, td.issuekey,                                                                                        /* Jira ID */
   .user-content-block :is(code, code *, pre code),
   .cke_editable :where(code, code *, pre),
   [class*="action-body"] :where(code, code *, pre),
@@ -1143,6 +1163,7 @@
     [id*="_zoom_us"],
     [class*="animated"]
   ):not(
+    .panel-footer > button,
     :is(.d-flex > .btn),
     :is(.threat-hunting-homepage-button-group > .btn),
     :is(.btn-group > .btn),
