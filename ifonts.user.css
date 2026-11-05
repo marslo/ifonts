@@ -787,18 +787,18 @@
     font-size: var(--font-size-xsmall-mono) !important;
   }
 
-  .tox .tox-statusbar__help-text,
-  a.aui-label {
+  .tox .tox-statusbar__help-text {
     font-family: "Blex", var(--font-family-mono-accent, monospace) !important;
   }
-  .ghx-agile .aui-label {
+  .ghx-agile .aui-label,
+  a.aui-label {
     font-family: "LektonLig Nerd Font Mono", var(--font-family-mono-accent, monospace) !important;
     font-size: 15px !important;
     font-weight: bold !important;
     padding: 3px 5px !important;
   }
 
-  div[class*="ghx-key"] > a, td.issuekey,                                                                                        /* Jira ID */
+  div[class*="ghx-key"] > a, td.issuekey,                                                                                       /* Jira ID */
   .user-content-block :is(code, code *, pre code),
   .cke_editable :where(code, code *, pre),
   [class*="action-body"] :where(code, code *, pre),
@@ -1628,3 +1628,15 @@
   }
 
 } /* @-moz-document: local markdown preview */
+
+@-moz-document regexp("^file://.*") {
+
+  /**
+   * local files
+  **/
+
+  .hljs-comment {
+    font-style: italic !important;
+  }
+
+} /* @-moz-document: local file */
