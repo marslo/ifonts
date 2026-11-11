@@ -1,3 +1,18 @@
+## [5.2.3](https://github.com/marslo/ifonts/compare/v5.2.2...v5.2.3) (2026-11-11)
+
+### Bug Fixes
+
+* **gemini**, **font**: widen gemini lists and tune font rules ([b107c5b](https://github.com/marslo/ifonts/commit/b107c5baa72774fdab5b52c7cd069da814ecdb2e))
+  - fill the widened column with `ul` / `ol` / `blockquote` / `dl` under `.body-text` instead of the 708px centered cap
+  - exclude `[class*="mavatar-"]` from the `span[class*="avatar"]` icon font rule
+  - exclude headings' `code` from the global `code` font family and size rule
+
+### Others
+
+* **local**: add local-file domains ([1f2b489](https://github.com/marslo/ifonts/commit/1f2b4895520ad037ff26f07d05dbca8e410f37af))
+  - add a `file://` section that sets `.hljs-comment` to italic
+  - move `a.aui-label` onto the LektonLig agile label rule
+
 ## [5.2.2](https://github.com/marslo/ifonts/compare/v5.2.1...v5.2.2) (2026-11-04)
 
 ### Bug Fixes
