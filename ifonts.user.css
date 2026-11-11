@@ -1113,7 +1113,7 @@
   /* ── icon settings ──────────────────────────────────────── */
   i[class*="fa-"],
   span[class*="glyphicon"],
-  span[class*="style_Navbar"], span[class*="avatar"]:not([class*="gravatar-text"]), span[class*="icon-"],
+  span[class*="style_Navbar"], span[class*="avatar"]:not([class*="gravatar-text"], [class*="mavatar-"]), span[class*="icon-"],
   i[class*="material-icons-"],
   i[class*="google-material-icons"],
   i[class*="iconfont"],
@@ -1230,7 +1230,7 @@
     font-size: var(--font-size-normal-mono) !important;
     line-height: 1.5em !important;
   }
-  code, code * {
+  code:not( h1 code, h2 code, h3 code, h4 code, h5 code), code:not( h1 code, h2 code, h3 code, h4 code, h5 code) * {
     font-family: var(--font-family-mono) !important;
     font-size: var(--font-size-small-mono) !important;
   }
@@ -1479,6 +1479,13 @@
     max-width: 100% !important;
   }
 
+  /* markdown lists / quotes ( `ul` / `ol` / `blockquote` / `dl` ) under the `.body-text` / `.gds-body-l` wrapper: gemini's component css ( `.enable-extended-and-xl-grid … .body-text > ol` etc. ) caps them at 708px and centers them; fill the widened column instead */
+  :is(.markdown, .body-text, .gds-body-l) :is(ul, ol, blockquote, dl) {
+    max-width: 100% !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+  }
+
   /* action buttons row (thumb up/down, regenerate, share) — drop the 708px cap and auto-centering so the icons sit left under the reply */
   .response-container-footer,
   message-actions {
@@ -1491,7 +1498,6 @@
   .user-query-bubble-with-background {
     max-width: 60% !important;
   }
-
 
   /* override the hardcoded 692px max-width on the inner table container */
   div.table-block,
@@ -1514,6 +1520,7 @@
   .code-block pre:not(#_),
   .code-block code:not(#_) {
     font-family: var(--font-family-mono-accent) !important;
+    font-size: var(--font-size-big-mono) !important;
   }
 
 } /* @-moz-document: gemini */

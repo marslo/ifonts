@@ -2,7 +2,7 @@
 ---
 # pin the Node used by node-language hooks (stylelint); verified with pre-commit 4.6.2 + npm 11.20.0 ( stylelint 18 requires node ^22.22.2 || ^24.15.0 || >=26 )
 default_language_version:
-  node: 26.12.1
+  node: 26.13.0
 
 # `pre-commit install` installs BOTH git hooks (so the commit-msg check activates without --hook-type)
 default_install_hook_types: [pre-commit, commit-msg]
@@ -43,12 +43,12 @@ repos:
         args: [--whitespaces-count, '2']
 
   - repo: https://github.com/thibaudcolas/pre-commit-stylelint
-    rev: v17.16.0
+    rev: v18.0.0
     hooks:
       - id: stylelint
         name: Stylelint
         additional_dependencies:
-          - 'stylelint@17.16.0'
+          - 'stylelint@18.0.0'
         args: ['--fix']
         files: '\.css$'
 
