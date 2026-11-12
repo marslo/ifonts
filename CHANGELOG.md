@@ -1,3 +1,16 @@
+## [5.3.0](https://github.com/marslo/ifonts/compare/v5.2.3...v5.3.0) (2026-11-12)
+
+### Features
+
+* **cursor**: widen cursor docs to 90cqw ([6451873](https://github.com/marslo/ifonts/commit/6451873832dcf0a46029554530e6e59b79125b4f))
+  - add a `@-moz-document` block scoped to `cursor.com/docs` and its sub-pages
+  - set the `main#main-content` page wrapper as the `cqw` query container
+  - raise the outer `max-w-7xl` wrapper to `90cqw` and let the `max-w-5xl` / `max-w-3xl` layers fill it
+
+### Others
+
+* **fonts**: add `Yozai Nerd Font` to the `--font-family-mono-accent` fallback stack for chinese characters ([5942ec9](https://github.com/marslo/ifonts/commit/5942ec937917a235922d11cb9234ec18398c83e9))
+
 ## [5.2.3](https://github.com/marslo/ifonts/compare/v5.2.2...v5.2.3) (2026-11-11)
 
 ### Bug Fixes
