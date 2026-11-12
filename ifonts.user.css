@@ -1415,7 +1415,7 @@
   @font-face { font-family:'Blex'; font-weight:bold;   font-style:italic; src: local('BlexMonoLigNFM-TextItalic'), local('BlexMonoLig Nerd Font Mono Text Italic'); }
 
   :root {
-      --font-family-mono-accent: "Blex", "Google Sans Code", ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, 'Liberation Mono', monospace;
+      --font-family-mono-accent: "Blex", "Google Sans Code", "Yozai Nerd Font", ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, 'Liberation Mono', monospace;
   }
 
   /* control the width of the outer container at the bottom and force it to be horizontally centered */
