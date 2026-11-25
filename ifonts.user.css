@@ -643,6 +643,7 @@
   .jsonpOpener, .timestamp:not(
     [class*="timestamp-top"],
     [class*="livestamp"],                                                /* confluence */
+    .devstatus-detail-table *,                                           /* jira dev status dialog ( commits / pull requests / builds ) */
     [data-cy*="post-timestamp"],
     [data-uri*="cnn.com"]
   ),                                                                     /* json viewer; not in discussions.apple.com */
