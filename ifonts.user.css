@@ -77,7 +77,7 @@
 }
 
 
-@-moz-document regexp("(?:https?://((?!([^/]*jenkins(?!gitpod)[^/]*\\.com/?.*|34\\.233.*|3\\.230.*|10\\.69.*|imarslo\\.jenkins\\.com|ci\\.jenkins\\.io).*|.*Monitor/$|.*sabacloud\\.com|.*detail.*pipeline|shields\\.io|127\\.0\\.0\\.1|0\\.0\\.0\\.0|localhost|.*fonts?.+\\.(com|org|net)|.*fonts?.(cn|netlify)|.*/fonts/.*|.*zijia.com.cn|.*sharepoint\\.com|programmingfonts|.*re-dashboard|jqplay\\.org|.*\\.github\\.dev|.*github\\.(com|io)|.*githubusercontent\\.(com|io)|.*\\.w3schools\\.com|artifactory.*\\.com/.*/groovydoc/|.*Iosevka|html-online).).*)|file://.*/git-doc/.+\\.html") {
+@-moz-document regexp("(?:https?://((?!([^/]*jenkins(?!gitpod)[^/]*\\.com/?.*|34\\.233.*|3\\.230.*|10\\.69.*|imarslo\\.jenkins\\.com|ci\\.jenkins\\.io).*|.*Monitor/$|.*sabacloud\\.com|.*detail.*pipeline|shields\\.io|127\\.0\\.0\\.1|0\\.0\\.0\\.0|localhost|.*fonts?.+\\.(com|org|net)|.*fonts?.(cn|netlify)|.*/fonts/.*|.*zijia.com.cn|.*sharepoint\\.com|programmingfonts|.*re-dashboard|.*-re-task-tracker|jqplay\\.org|.*\\.github\\.dev|.*github\\.(com|io)|.*githubusercontent\\.(com|io)|.*\\.w3schools\\.com|artifactory.*\\.com/.*/groovydoc/|.*Iosevka|html-online).).*)|file://.*/git-doc/.+\\.html") {
 
   /**
    * universal domains / local git-doc html
@@ -594,8 +594,9 @@
     [class*="is-fullwidt"],
     [class*="custom-select"],
     [class*="gerrit"],
-    [class*="courses-view-selector"]                                     /* learning center */
-  ):not(p):not([class="col-phase"]) > select:not(                        /* tracker */
+    [class*="courses-view-selector"],                                    /* learning center */
+    p
+  ) > select:not(                                                        /* tracker */
     [class*="form-select"], [class*="select"], [id*="select-ember"],
     [class*="com-google-gerrit"],
     [id*="version"],
